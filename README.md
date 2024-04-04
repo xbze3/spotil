@@ -35,10 +35,12 @@ CLIENT_SECRET = "YOUR-SECRET"
 - base64
 - josn
 - requests
+- post from requests
 - urllib.request
 - re
 - os
 - yt_dlp
+- load_dotenv from dotenv
 
 These can all be installed using `pip install LIBRARY-NAME`
 
