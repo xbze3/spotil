@@ -20,7 +20,7 @@ The program also makes use of two `.txt` files, a `.env` file and a directory ca
   - This is the directory where tracks will be placed after being downloaded.
 
 ## Important
-The program requires a `.env` file containing the two environment varibles `CLIENT_ID` and `CLIENT_SECRET`. These can both be accessed by creating a free Spotify Developer account.
+The program requires a `.env` file containing the two environment varibles `CLIENT_ID` and `CLIENT_SECRET`. These can both be accessed by creating a free [Spotify Developer](https://developer.spotify.com/) account.
 
 The format of this fule should be:
 ```
