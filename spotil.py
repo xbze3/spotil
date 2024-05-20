@@ -15,8 +15,8 @@ from requests import post
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 
-readPullFile = open("pullPlaylist.txt","r")
-writePullFile = open("pullPlaylist.txt","a")
+readPullFile = open("dependencies/pullPlaylist.txt","r")
+writePullFile = open("dependencies/pullPlaylist.txt","a")
 
 #   Function to get session token from spotify API
 
@@ -52,8 +52,8 @@ def get_auth_header(token):
 
 def get_playlist_tracks(token, playlist_id):
 
-    readInstalledFile = open("installed.txt","r")
-    writeInstalledFile = open("installed.txt","a")
+    readInstalledFile = open("dependencies/installed.txt","r")
+    writeInstalledFile = open("dependencies/installed.txt","a")
 
     field = "fields=tracks.items(track(name, artists(name)))"
     url = "https://api.spotify.com/v1/playlists/" + playlist_id + "&" + field
@@ -122,16 +122,16 @@ def download_video(url):
 #   Function to clear the text file in which the pull-playlist ID is stored when ID is updated
 
 def clearPullFile():
-    writePullFile = open("pullPlaylist.txt","w")
-    writePullFile.close();
-    writePullFile = open("pullPlaylist.txt","a")
+    writePullFile = open("dependencies/pullPlaylist.txt","w")
+    writePullFile.close()
+    writePullFile = open("dependencies/pullPlaylist.txt","a")
 
 #   Function to clear file containing all previously installed songs when playlist ID is changed
 
 def clearInstalledFile():
-    writeInstalledFile = open("installed.txt","w")
+    writeInstalledFile = open("dependencies/installed.txt","w")
     writeInstalledFile.close()
-    writeInstalledFile = open("installed.txt","a")
+    writeInstalledFile = open("dependencies/installed.txt","a")
 
 #   This portion check whether the playlist ID has been specified or not, but checking tho see whether the pullPlaylist file is
 # is empty or not
@@ -154,8 +154,8 @@ while True:
         pullChange = input("Playlist ID: ")
         playlist_id = pullChange
         pullSet = True
-        clearPullFile();
-        writePullFile.write(pullChange);
+        clearPullFile()
+        writePullFile.write(pullChange)
 
     elif(userCommand == "pull"):
         if(pullSet == True):
@@ -171,5 +171,5 @@ while True:
 
 
     elif(userCommand == "exit"):
-        print("Thank you for using :)");
-        break;
+        print("Thank you for using :)")
+        break
