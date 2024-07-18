@@ -69,31 +69,16 @@ def get_playlist_tracks(token, playlist_id):
     for track in readInstalledFile.readlines():
         alreadyInstalled.append(track)
 
-    print("\n")
-    print("--------START--------")
-
     for track in result:
         currentData = f"{track['track']['name']} - {track['track']['artists'][0]['name']}"
-        print(currentData)
         trackList.append(currentData)
 
         if(f"{currentData}\n" not in alreadyInstalled):
             new.append(currentData)
             writeInstalledFile.writelines(f"{currentData}\n")
 
-    
-    print("---------END---------")
-    print("\n")
-
-    print("---------NEW---------")
-
     for track in new:
-        print(f"New: {track}")
         get_youtube_link(track)
-
-
-    print("---------------------")
-    print("\n")
 
     readInstalledFile.close()
     writeInstalledFile.close()
@@ -124,58 +109,8 @@ def download_video(url):
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
 
-#   Function to clear the text file in which the pull-playlist ID is stored when ID is updated
+#   Main Script
 
-def clearPullFile():
-    writePullFile = open("dependencies/pullPlaylist.txt","w")
-    writePullFile.close()
-    writePullFile = open("dependencies/pullPlaylist.txt","a")
+playlist_id = "4zjRKXhbBEkoz8iaDLhYKj?si=848546a7348b4514"
 
-#   Function to clear file containing all previously installed songs when playlist ID is changed
-
-def clearInstalledFile():
-    writeInstalledFile = open("dependencies/installed.txt","w")
-    writeInstalledFile.close()
-    writeInstalledFile = open("dependencies/installed.txt","a")
-
-#   This portion checks whether the playlist ID has been specified or not, but checking tho see whether the pullPlaylist file is
-# is empty or not
-
-first_char = readPullFile.read(1)
-
-if not first_char:
-    pullSet = False
-    playlist_id = "4zjRKXhbBEkoz8iaDLhYKj?si=848546a7348b4514"
-
-else:
-    pullSet = True
-    playlist_id = first_char + readPullFile.readline().strip()
-
-#   Main program loop
-
-while True:
-    userCommand = input("spotil> ")
-
-    if(userCommand == "set-id"):
-        pullChange = input("Playlist ID: ")
-        playlist_id = pullChange
-        pullSet = True
-        clearPullFile()
-        writePullFile.write(pullChange)
-
-    elif(userCommand == "pull"):
-        if(pullSet == True):
-            get_playlist_tracks(token, playlist_id)
-
-        else:
-            print("Pull playlist not set, default will be used (Use command 'pull-set' to specify playlist ID)")
-            playlist_id = "4zjRKXhbBEkoz8iaDLhYKj?si=848546a7348b4514"
-            get_playlist_tracks(token, playlist_id)
-
-    elif(userCommand == "show-id"):
-        print(f"Pull Playlist ID: {playlist_id}")
-        
-
-    elif(userCommand == "exit"):
-        print("Thank you for using :)")
-        break
+get_playlist_tracks(token, playlist_id)
