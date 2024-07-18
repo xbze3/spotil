@@ -15,9 +15,6 @@ from requests import post
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 
-readPullFile = open("dependencies/pullPlaylist.txt","r")
-writePullFile = open("dependencies/pullPlaylist.txt","a")
-
 #   Function to get session token from spotify API
 
 def get_token():
