@@ -113,7 +113,12 @@ def get_youtube_link(track_name):
 def download_video(url):
     ydl_opts = {
         'format': 'bestaudio/best',
-        'outtmpl': '.\downloaded\%(title)s.%(ext)s',
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': '192',
+        }],
+        'outtmpl': r'.\downloaded\%(title)s.%(ext)s',
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -133,13 +138,14 @@ def clearInstalledFile():
     writeInstalledFile.close()
     writeInstalledFile = open("dependencies/installed.txt","a")
 
-#   This portion check whether the playlist ID has been specified or not, but checking tho see whether the pullPlaylist file is
+#   This portion checks whether the playlist ID has been specified or not, but checking tho see whether the pullPlaylist file is
 # is empty or not
 
 first_char = readPullFile.read(1)
 
 if not first_char:
     pullSet = False
+    playlist_id = "4zjRKXhbBEkoz8iaDLhYKj?si=848546a7348b4514"
 
 else:
     pullSet = True
@@ -168,7 +174,7 @@ while True:
 
     elif(userCommand == "show-id"):
         print(f"Pull Playlist ID: {playlist_id}")
-
+        
 
     elif(userCommand == "exit"):
         print("Thank you for using :)")
