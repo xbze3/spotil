@@ -22,13 +22,11 @@ The program also makes use of two `.txt` files, a `.env` file and a directory ca
 ## Important
 The program requires a `.env` file containing the two environment varibles `CLIENT_ID` and `CLIENT_SECRET`. These can both be accessed by creating a free [Spotify Developer](https://developer.spotify.com/) account.
 
-The format of this fule should be:
+The format of this file should be:
 ```
 CLIENT_ID = "YOUR-ID"
 CLIENT_SECRET = "YOUR-SECRET"
 ```
-
-### Note - Required files and directory should all be placed in the same folder as the program file.
 
 ## Required Libraries
 
@@ -42,7 +40,7 @@ CLIENT_SECRET = "YOUR-SECRET"
 - yt_dlp
 - load_dotenv from dotenv
 
-These can all be installed using `pip install LIBRARY-NAME` or py using the command `pip install -r requirements.txt`
+These can all be installed using `pip install LIBRARY-NAME` or by using the command `pip install -r requirements.txt`
 
 ## Program Usage
 `set-id` - Set the current pull-playlist ID.
