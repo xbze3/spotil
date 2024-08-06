@@ -103,7 +103,7 @@ def get_playlist_tracks(token, playlist_id):
 def get_youtube_link(track_name):
     search_keyword = track_name.replace(" ", "+")
 
-    html = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + search_keyword)
+    html = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + search_keyword + "+audio")
     video_ids = re.findall(r"watch\?v=(\S{11})", html.read().decode())
     url = f"https://www.youtube.com/watch?v={video_ids[0]}"
     download_video(url)
