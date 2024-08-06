@@ -1,4 +1,4 @@
 .env
 .tmp.driveupload
-/downloaded/
+/downloaded/*
 /dependencies/installed.txt
