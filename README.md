@@ -40,7 +40,8 @@ CLIENT_SECRET = "YOUR-SECRET"
 - yt_dlp
 - load_dotenv from dotenv
 
-These can all be installed using `pip install LIBRARY-NAME` or by using the command `pip install -r requirements.txt`
+These can all be installed using `pip install LIBRARY-NAME` or by using the command:
+- `pip install -r requirements.txt`
 
 ## Program Usage
 `set-id` - Set the current pull-playlist ID.
