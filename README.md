@@ -43,7 +43,7 @@ CLIENT_SECRET = "YOUR-SECRET"
 These can all be installed using `pip install LIBRARY-NAME` or by using the command:
 - `pip install -r requirements.txt`
 
-The program also requires a copy of ffmpeg to be installed and added to path. This tutorial by TroubleChute will walk you through the process of the ffmpeg install then addition to path. (https://youtu.be/IECI72XEox0?feature=shared)
+The program also requires a copy of ffmpeg to be installed and added to path. This video tutorial by "TroubleChute" on YouTube, will walk you through the process of the ffmpeg install and addition to path. (https://youtu.be/IECI72XEox0?feature=shared)
 
 ## Program Usage
 `set-id` - Set the current pull-playlist ID.
