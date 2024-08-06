@@ -153,6 +153,9 @@ else:
 
 #   Main program loop
 
+print('Enter "?" to view help message')
+print("\n")
+
 while True:
     userCommand = input("spotil> ")
 
@@ -174,6 +177,17 @@ while True:
 
     elif(userCommand == "show-id"):
         print(f"Pull Playlist ID: {playlist_id}")
+
+    elif(userCommand == "?"):
+        print("\n")
+        print(" =============================================================")
+        print(" | set-id  -  Used to set the ID of the download playlist    |")
+        print(" | show-id -  Used to show the current download playlist ID  |")
+        print(" | pull    -  Used to download songs from specified playlist |")
+        print(" | exit    -  Used to exit the program                       |")
+        print(" =============================================================")
+        print("\n")
+
         
 
     elif(userCommand == "exit"):
