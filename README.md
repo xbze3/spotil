@@ -1,3 +1,5 @@
+# NOTE: THIS TOOL NO LONGER WORKS DUE TO YOUTUBE'S NEW BOT DETECTION SYSTEM
+
 # spotil
 A python program that can download songs listed in a public Spotify Playlist.
 
