@@ -1,4 +1,4 @@
 python-dotenv==1.0.1
 requests==2.31.0
 urllib3==2.2.1
-yt-dlp==2024.4.9
+yt-dlp==2025.1.26
